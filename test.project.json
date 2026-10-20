@@ -1,0 +1,66 @@
+{
+  "name": "reusable-systems-tests",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "Packages": {
+        "$className": "Folder",
+        "$path": "../Packages"
+      },
+      "Config": {
+        "$className": "Folder",
+        "$path": "Tests/Tree/ReplicatedStorage/Config"
+      },
+      "Types": {
+        "$className": "Folder",
+        "$path": "Tests/Tree/ReplicatedStorage/Types"
+      },
+      "Utility": {
+        "$className": "Folder",
+        "$path": "Tests/Tree/ReplicatedStorage/Utility"
+      },
+      "ShopAnimations": {
+        "$path": "Tests/Tree/ReplicatedStorage/ShopAnimations.lua"
+      }
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "$path": "Tests/Tree/ServerScriptService",
+      "Packages": {
+        "$className": "Folder",
+        "Janitor": {
+          "$path": "../ServerPackages/Janitor.lua"
+        },
+        "_Index": {
+          "$className": "Folder",
+          "$path": "../ServerPackages/_Index"
+        },
+        "ProfileService": {
+          "$path": "Vendored/ProfileService.lua"
+        },
+        "DevPackages": {
+          "$className": "Folder",
+          "TestEZ": {
+            "$path": "../DevPackages/TestEZ.lua"
+          },
+          "_Index": {
+            "$className": "Folder",
+            "$path": "../DevPackages/_Index"
+          }
+        }
+      },
+      "TestEZTests": {
+        "$className": "Folder",
+        "$path": "Tests/Tree/ServerScriptService/TestEZTests"
+      }
+    },
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+      "StarterPlayerScripts": {
+        "$className": "Folder",
+        "$path": "Tests/Tree/StarterPlayer/StarterPlayerScripts"
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "name": "reusable-systems",
+  "tree": {
+    "$className": "DataModel",
+    "ReusableSystems": {
+      "$className": "Folder",
+      "Systems": {
+        "$className": "Folder",
+        "$path": "Systems"
+      },
+      "Shared": {
+        "$className": "Folder",
+        "$path": "Shared"
+      },
+      "Integrations": {
+        "$className": "Folder",
+        "$path": "Integrations"
+      },
+      "Templates": {
+        "$className": "Folder",
+        "$path": "Templates"
+      },
+      "Vendored": {
+        "$className": "Folder",
+        "$path": "Vendored"
+      },
+      "Tests": {
+        "$className": "Folder",
+        "IntegrationTests": {
+          "$className": "Folder",
+          "$path": "Tests/IntegrationTests"
+        },
+        "_Helpers.lua": {
+          "$path": "Tests/_Helpers.lua"
+        },
+        "TestRunner.server.lua": {
+          "$path": "Tests/TestRunner.server.lua"
+        }
+      },
+      "Tools": {
+        "$className": "Folder",
+        "$path": "Tools"
+      },
+      "Examples": {
+        "$className": "Folder",
+        "IntegrationExamples": {
+          "$className": "Folder",
+          "$path": "Examples/IntegrationExamples"
+        }
+      }
+    }
+  }
+}

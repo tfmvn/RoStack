@@ -1,0 +1,52 @@
+{
+  "name": "minimal-game",
+  "tree": {
+    "$className": "DataModel",
+
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "$path": "src/ReplicatedStorage",
+
+      "Packages": {
+        "$className": "Folder",
+        "$path": "../../../Packages"
+      }
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "$path": "src/ServerScriptService",
+
+      "Packages": {
+        "$className": "Folder",
+
+        "ProfileService": {
+          "$path": "../../Vendored/ProfileService.lua"
+        },
+        "Janitor": {
+          "$path": "../../../ServerPackages/Janitor.lua"
+        },
+        "_Index": {
+          "$className": "Folder",
+          "$path": "../../../ServerPackages/_Index"
+        }
+      }
+    },
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "$path": "src/StarterPlayer/StarterPlayerScripts"
+      }
+    },
+    "StarterGui": {
+      "$className": "StarterGui",
+      "$path": "src/StarterGui",
+      "$ignoreUnknownInstances": true
+    },
+    "Workspace": {
+      "$className": "Workspace",
+      "$path": "src/Workspace",
+      "$ignoreUnknownInstances": true
+    }
+  }
+}

@@ -1,0 +1,72 @@
+# Wally manifest template for a game built on this library.
+#
+# Copy this to the ROOT of your new Roblox project as `wally.toml`, then
+# run `wally install`.
+#
+# It is the source game's manifest with the DEAD dependencies removed
+# (`Fusion` and `Promise` are declared in the source game but nothing
+# requires them) and with a note about ProfileService.
+#
+# `wally install` writes into `Packages/`, `ServerPackages/` and
+# `DevPackages/`. Your Rojo project must map them, or the `require`s that
+# expect them will fail at runtime. See `PROJECT_SETUP.md` §"Packages".
+
+[package]
+name = "yourname/your-game"   # <-- CHANGE ME
+version = "0.1.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+license = "MIT"
+authors = ["yourname"]
+exclude = ["**/*.md", "**/*.toml", "sourcemap.json", "Packages", "ServerPackages", "DevPackages"]
+
+# --- Shared (client + server) ------------------------------------------------
+# The library's `Shared/Utilities/Signals.lua` re-exports this.
+Signal = "sleitnick/signal@^1.0.0"
+
+# The library's `Shared/Utilities/Validation.lua` re-exports this.
+t = "osyrisrblx/t@^2.2.1"
+
+# Needed by the `ClientPresentation` topbar clients.
+TopbarPlus = "1foreverhd/topbarplus@^3.4.0"
+
+# --- Server-only -------------------------------------------------------------
+# Ties instance cleanup to service lifetime (anti-leak). Required by
+# `PlayerData`, `Animals` and others.
+Janitor = "kineticwallet/janitor@^1.0.0"
+
+# The in-game admin command framework used by the `AdminTools` system.
+# Pinned to 1.12.0: 1.13.0 reshuffled the package layout (Command moved
+# under CmdrClient, init.luau uses `const`), which needs a different
+# bootstrap path.
+Cmdr = "evaera/cmdr@~1.12.0"
+
+# --- DataStore profiles ------------------------------------------------------
+# The `PlayerData` system requires a module at
+# `ServerScriptService.Packages.ProfileService`.
+#
+# TWO OPTIONS -- pick one:
+#
+# (a) Install it from Wally. Uncomment the line below and delete the
+#     `ReusableSystems/Vendored/` folder:
+#
+# ProfileService = "alexesThroughout/ProfileService@^1.0.0"
+#
+# (b) Keep the verbatim copy the library ships at
+#     `ReusableSystems/Vendored/ProfileService.lua` and map it in your
+#     Rojo project:
+#
+#     "ServerScriptService": {
+#       "Packages": {
+#         "ProfileService": { "$path": "ReusableSystems/Vendored/ProfileService.lua" }
+#       }
+#     }
+#
+# Option (b) is what the library's own test project does. See
+# `ReusableSystems/Vendored/README.md`.
+
+# --- Development -------------------------------------------------------------
+# TestEZ is the de-facto Luau test framework. The library's 89 specs are
+# TestEZ specs. The suite REQUIRES Roblox Studio to run -- there is no
+# headless runner.
+TestEZ = "roblox/testez@^0.4.0"
